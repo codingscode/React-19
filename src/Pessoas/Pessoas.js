@@ -1,19 +1,21 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 
 import Pessoa from '../Pessoa/Pessoa'
 
-class Pessoas extends Component {
+class Pessoas extends PureComponent {
    
-  shouldComponentUpdate(nextProps, nextState) {
+  /*shouldComponentUpdate(nextProps, nextState) {
     console.log('[Pessoas.js] shouldComponentUpdate');
-    if (nextProps.pessoas !== this.props.pessoas) {
+    if (nextProps.pessoas !== this.props.pessoas ||
+        nextProps.changed !== this.props.changed || 
+        nextProps.clicked !== this.props.clicked) {
       return true;
     }
     else {
       return false;
     } 
     //return true; 
-  }
+  } */
  
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('[Pessoas.js] getSnapshotBeforeUpdate');
